@@ -1405,7 +1405,7 @@ class Client
      * Returns a single gift certificate resource by the given id.
      *
      * @param int $id gift certificate id
-     * @return Resources\Product|string
+     * @return Resources\GiftCertificate|string
      */
     public static function getGiftCertificate($id)
     {
