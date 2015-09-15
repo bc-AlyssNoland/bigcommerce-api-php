@@ -1389,4 +1389,138 @@ class Client
         $filter = Filter::create($filter);
         return self::getCollection('/orders/' . $orderID . '/shipping_addresses' . $filter->toQuery(), 'Address');
     }
+    /**
+     * Returns the default collection of gift certificates.
+     *
+     * @param array $filter
+     * @return mixed array|string list of gift certificates or XML string if useXml is true
+     */
+    public static function getGiftCertificates($filter = array())
+    {
+        $filter = Filter::create($filter);
+        return self::getCollection('/gift_certificates' . $filter->toQuery(), 'Gift Certificates');
+    }
+
+    /**
+     * Returns a single gift certificate resource by the given id.
+     *
+     * @param int $id gift certificate id
+     * @return Resources\Product|string
+     */
+    public static function getGiftCertificate($id)
+    {
+        return self::getResource('/gift_certificates/' . $id, 'Gift Certificate');
+    }
+
+    /**
+     * Create a new gift certificate.
+     *
+     * @param mixed $object fields to create
+     * @return mixed
+     */
+    public static function createGiftCertificate($object)
+    {
+        return self::createResource('/gift_certificates', $object);
+    }
+
+    /**
+     * Update the given gift certificate.
+     *
+     * @param int $id gift certificate id
+     * @param mixed $object fields to update
+     * @return mixed
+     */
+    public static function updateGiftCertificate($id, $object)
+    {
+        return self::updateResource('/gift_certificates/' . $id, $object);
+    }
+
+    /**
+     * Delete the given gift certificate.
+     *
+     * @param int $id gift certificate id
+     * @return mixed
+     */
+    public static function deleteGiftCertificate($id)
+    {
+        return self::deleteResource('/gift_certificates/' . $id);
+    }
+
+    /**
+     * Delete all gift certificates.
+     *
+     * @return mixed
+     */
+    public static function deleteAllGiftCertificates()
+    {
+        return self::deleteResource('/gift_certificates');
+    }
+
+    /**
+     * Returns the default collection of banners.
+     *
+     * @param array $filter
+     * @return mixed array|string list of banners or XML string if useXml is true
+     */
+    public static function getBanners($filter = array())
+    {
+        $filter = Filter::create($filter);
+        return self::getCollection('/banners' . $filter->toQuery(), 'Banners');
+    }
+
+    /**
+     * Returns a single banner resource by the given id.
+     *
+     * @param int $id banner id
+     * @return Resources\Banner|string
+     */
+    public static function getBanner($id)
+    {
+        return self::getResource('/banners/' . $id, 'Banner');
+    }
+
+    /**
+     * Create a new banner.
+     *
+     * @param mixed $object fields to create
+     * @return mixed
+     */
+    public static function createBanner($object)
+    {
+        return self::createResource('/banners', $object);
+    }
+
+    /**
+     * Update the given banner.
+     *
+     * @param int $id banner id
+     * @param mixed $object fields to update
+     * @return mixed
+     */
+    public static function updateBanner($id, $object)
+    {
+        return self::updateResource('/banners/' . $id, $object);
+    }
+
+    /**
+     * Delete the given banner.
+     *
+     * @param int $id banner id
+     * @return mixed
+     */
+    public static function deleteBanner($id)
+    {
+        return self::deleteResource('/banners/' . $id);
+    }
+
+    /**
+     * Delete all banners.
+     *
+     * @return mixed
+     */
+    public static function deleteAllBanner()
+    {
+        return self::deleteResource('/banners');
+    }
 }
+
